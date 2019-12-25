@@ -141,3 +141,15 @@ Inception Scoreは、生成されたものが識別しやすいほどまたは�
 - Quality ・・・ 生成された音声の音質
 - Ease ・・・ 生成された音声の認識しやすさ
 - Diversity ・・・ 生成された音声の多様性
+
+## 7.RESULTS AND DISCUSSION
+
+<img width="478" alt="Result_Inception_score" src="https://user-images.githubusercontent.com/39772824/71443592-27b08180-274f-11ea-9a26-708de9b44496.png">
+
+上記の表はInception Scoreなどの評価の結果です。  
+
+- Inception ScoreとAccuracyの観点ではSpecGANの方が評価がよかった。
+- 人間の評価に関してはWaveGANの方が多様性があり認識しやすいと判断された。
+
+これらのことより、この論文では目標が人が認識しやすい音声を生成することだったので、WaveGANの方が優れていると判断された。  
+Inception ScoreがSpecGANの方が高かった理由としては、Inception Scoreを出す際にいったんスペクトログラムに変換してから評価しているので、生成過程でInception Scoreを用いているSpecGANの方が高い結果が出たと思われる。  
