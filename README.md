@@ -94,3 +94,50 @@ Speech Commands Datasetは人間が0から9の数字を読み上げている音�
 以下の図は元のデータと生成された音声から生成されたスペクトログラムの結果です。
 
 <img width="776" alt="Experimental_WaveGAN_SpecGAN" src="https://user-images.githubusercontent.com/39772824/71442520-8ecb3780-2749-11ea-9c83-db7288eb84a9.png">
+
+## 6.EVALUATION METHODOLOGY
+
+### 6.1INCEPTION SCORE
+生成された音声を評価するために、定量的評価の方はInception Scoreを用いています。  
+Inception Scoreは、生成されたものが識別しやすいほどまたは生成されるものの種類が豊富であるほど高くなります。  
+
+以下の式に示すカルバック・ライブラー情報量を各データについて求めます。
+
+<img src="https://latex.codecogs.com/gif.latex?D_{KL}&space;(P(y|x_i)&space;||&space;P(y))&space;=&space;\sum_{y&space;\in&space;Y}&space;P(y|x_i)&space;log&space;\frac{P(y|x_i)}{P(y)}" />
+
+その後、このカルバック・ライブラー情報量の平均を取り、expを取るとInception Scoreになります。
+
+<img src="https://latex.codecogs.com/gif.latex?\exp&space;\left(&space;\frac{1}{|X|}&space;\sum_{x_i&space;\in&space;X}&space;D_{KL}&space;(P(y|x_i)&space;||&space;P(y))&space;\right)" />
+
+### 6.2NEAREST NEIGHBOR COMPARISONS
+上記のInception Scoreは予期せず高くなってしまう場合が2パターン考えられます。  
+
+- 出力されたデータが全て同じものになってしまう場合
+- トレーニングデータと同じものを生成してしまう場合（オーバーフィットしてしまう場合）
+
+これらの状態になっているかどうかを判断するために以下の二つの値を取ります。  
+
+---
+
+<img src="https://latex.codecogs.com/gif.latex?|D|_{self}">
+
+1000個の生成されたデータを取り、各点で他の生成された点と最も近い距離にある点とのユークリッド距離をとりその平均を取ったもの  
+この値を取ることにより、出力データが同じものになっていないかどうかを判断できます。  
+
+---
+
+<img src="https://latex.codecogs.com/gif.latex?|D|_{train}">
+
+1000個の生成されたデータを取り、各点でトレーニングデータの中で最も近い点とのユークリッド距離をとりその平均を取ったもの  
+この値を取ることにより、出力データがトレーニングデータと同じになっていないかどうかを判断できます。  
+
+---
+
+### 6.3QUALITATIVE HUMAN JUDGEMENTS
+この論文の目標は人間が認識しやすい音を生成することなので、生成された音を実際に300人の人に評価してもらっています。  
+評価対象の人は英語ネイティブの人です。  
+以下の観点を1 ~ 5の5段階で評価しています。  
+
+- Quality ・・・ 生成された音声の音質
+- Ease ・・・ 生成された音声の認識しやすさ
+- Diversity ・・・ 生成された音声の多様性
