@@ -1,4 +1,4 @@
-# ADVERSARIAL-AUDIO-SYNTHESIS
+# ADVERSARIAL AUDIO SYNTHESIS
 
 ## 0 ABSTRACT
 この研究は、GANを用いて人が認識しやすい音声を生成することを目的としたものです。  
