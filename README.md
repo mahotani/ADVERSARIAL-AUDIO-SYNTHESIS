@@ -90,3 +90,7 @@ Speech Commands Datasetは人間が0から9の数字を読み上げている音�
     - 様々なプロの演奏家が演奏するバッハの曲
 - Large vocab speech
     - 複数の人のスピーチ
+
+以下の図は元のデータと生成された音声から生成されたスペクトログラムの結果です。
+
+<img width="776" alt="Experimental_WaveGAN_SpecGAN" src="https://user-images.githubusercontent.com/39772824/71442520-8ecb3780-2749-11ea-9c83-db7288eb84a9.png">
