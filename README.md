@@ -97,7 +97,7 @@ Speech Commands Datasetは人間が0から9の数字を読み上げている音�
 
 ## 6.EVALUATION METHODOLOGY
 
-### 6.INCEPTION SCORE
+### 6.1INCEPTION SCORE
 生成された音声を評価するために、定量的評価の方はInception Scoreを用いています。  
 Inception Scoreは、生成されたものが識別しやすいほどまたは生成されるものの種類が豊富であるほど高くなります。  
 
@@ -108,3 +108,21 @@ Inception Scoreは、生成されたものが識別しやすいほどまたは�
 その後、このカルバック・ライブラー情報量の平均を取り、expを取るとInception Scoreになります。
 
 <img src="https://latex.codecogs.com/gif.latex?\exp&space;\left(&space;\frac{1}{|X|}&space;\sum_{x_i&space;\in&space;X}&space;D_{KL}&space;(P(y|x_i)&space;||&space;P(y))&space;\right)" />
+
+### 6.2NEAREST NEIGHBOR COMPARISONS
+上記のInception Scoreは予期せず高くなってしまう場合が2パターン考えられます。  
+
+- 出力されたデータが全て同じものになってしまう場合
+- トレーニングデータと同じものを生成してしまう場合（オーバーフィットしてしまう場合）
+
+これらの状態になっているかどうかを判断するために以下の二つの値を取ります。  
+
+<img src="https://latex.codecogs.com/gif.latex?|D|_{self}">
+
+1000個の生成されたデータを取り、各点で他の生成された点と最も近い距離にある点とのユークリッド距離をとりその平均を取ったもの  
+この値を取ることにより、出力データが同じものになっていないかどうかを判断できます。  
+
+<img src="https://latex.codecogs.com/gif.latex?|D|_{train}">
+
+1000個の生成されたデータを取り、各点でトレーニングデータの中で最も近い点とのユークリッド距離をとりその平均を取ったもの  
+この値を取ることにより、出力データがトレーニングデータと同じになっていないかどうかを判断できます。  
