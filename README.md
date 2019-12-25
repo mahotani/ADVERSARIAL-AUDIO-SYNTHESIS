@@ -60,7 +60,7 @@ DCGANは画像生成する時に生成した画像にチェッカーボードと
 音声の場合は、いずれかの音階が壊れることがあります。  
 それを防ぐために以下の図のようなイメージでディスクリミネータ側で生成されたデータをシャッフルしています。  
 
-<img width="555" alt="Phase_shuffle" src="https://user-images.githubusercontent.com/39772824/71440336-2e83c800-2740-11ea-9dbd-602e14314d59.png">
+<img width="405" alt="Phase_shuffle" src="https://user-images.githubusercontent.com/39772824/71440336-2e83c800-2740-11ea-9dbd-602e14314d59.png">
 
 生成されたデータを細かく区切り、いくつかの整数をランダムで用いて、例えば  
 -1の場合は、左に1つずらし、はみ出た部分を空いたとこに戻す。  
