@@ -102,7 +102,9 @@ Speech Commands Datasetは人間が0から9の数字を読み上げている音�
 Inception Scoreは、生成されたものが識別しやすいほどまたは生成されるものの種類が豊富であるほど高くなります。  
 
 以下の式に示すカルバック・ライブラー情報量を各データについて求めます。
-$$D_{KL} (P(y|x_i) || P(y)) = ¥sum_{y ¥in Y} P(y|x_i) log ¥frac{P(y|x_i)}{P(y)}$$
+
+<img src="https://latex.codecogs.com/gif.latex?D_{KL}&space;(P(y|x_i)&space;||&space;P(y))&space;=&space;\sum_{y&space;\in&space;Y}&space;P(y|x_i)&space;log&space;\frac{P(y|x_i)}{P(y)}" />
 
 その後、このカルバック・ライブラー情報量の平均を取り、expを取るとInception Scoreになります。
-$$¥exp ¥left( ¥frac{1}{|X|} ¥sum_{x_i ¥in X} D_{KL} (P(y|x_i) || P(y) ¥right)$$
+
+<img src="https://latex.codecogs.com/gif.latex?\exp&space;\left(&space;\frac{1}{|X|}&space;\sum_{x_i&space;\in&space;X}&space;D_{KL}&space;(P(y|x_i)&space;||&space;P(y))&space;\right)" />
