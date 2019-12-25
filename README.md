@@ -38,3 +38,19 @@ WaveGANは画像と音声の違いを見つけ、それらの違いを使い従�
   <dd>周期性が強く表れている</dd>
 </dl> 
 2次元データに対応していた従来のGANを1次元データに対応させるように作りかえれば良いように思えるが、それ以外にも特徴の違いが見られるので他の部分も考慮しつつ作りかえないとうまくいかないと思われる。
+
+### 3.2WAVEGAN ARCHITECTURE
+WaveGANはDCGANを元にして作られています。  
+画像用のDCGANは画像が2次元データなので、2次元のデータを扱う構造をしているが、音声データを扱うためには1次元のデータを扱う構造に直す必要があります。  
+画像を生成する際、stride factorと呼ばれる空白を徐々に増やしていきその空白をすでに形成されているデータと照らし合わしながら埋めていきます。  
+
+画像の場合
+---
+<img width="555" alt="DCGANinWaveGAN1" src="https://user-images.githubusercontent.com/39772824/71439955-f62fba00-273e-11ea-8cc2-4fbf3e7abd20.png"> 
+
+音声の場合
+---
+<img width="555" alt="DCGANinWaveGAN2" src="https://user-images.githubusercontent.com/39772824/71439961-faf46e00-273e-11ea-8a06-fc75cd4c054f.png">  
+
+学習方法はWGAN-GPと同じものを使っています。  
+また、WaveGANでは、本来のDCGANと違い、バッチ正規化を行っていません。  
