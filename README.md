@@ -13,11 +13,11 @@
 画像生成で使われているGANを音声生成で使用するには、スペクトログラムに変換して画像として扱うと簡単になると考えられます。  
   
 この論文では、2種類のGANの提案をしています。
-  
+
 ---
 1つ目はSpecGANと呼ばれるもので、これは入力のオーディオデータをスペクトログラムに直して扱うモデルです。  
 <img width="776" alt="SpecGAN" src="https://user-images.githubusercontent.com/39772824/71434596-962e1900-2728-11ea-9a69-93b3c72d03e9.png">  
 
 ---
 2つ目はWaveGANと呼ばれるもので、これは画像生成に使われているDCGANを音声生成に対応するように作り替えたものです。入力データを別の形に変換せずにそのまま使えるのが特徴です。  
-<img width="776" alt="WaveGAN" src="https://user-images.githubusercontent.com/39772824/71434590-91696500-2728-11ea-9958-3d52cec1892f.png">  
+<img width="555" alt="WaveGAN" src="https://user-images.githubusercontent.com/39772824/71434590-91696500-2728-11ea-9958-3d52cec1892f.png">  
