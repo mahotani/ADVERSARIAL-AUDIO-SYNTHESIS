@@ -144,7 +144,7 @@ Inception Scoreは、生成されたものが識別しやすいほどまたは�
 
 ## 7 RESULTS AND DISCUSSION
 
-<img width="478" alt="Result_Inception_score" src="https://user-images.githubusercontent.com/39772824/71443592-27b08180-274f-11ea-9a26-708de9b44496.png">
+<img width="600" alt="Result_Inception_score" src="https://user-images.githubusercontent.com/39772824/71443592-27b08180-274f-11ea-9a26-708de9b44496.png">
 
 上記の表はInception Scoreなどの評価の結果です。  
 
