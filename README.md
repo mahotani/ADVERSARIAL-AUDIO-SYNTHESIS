@@ -1,7 +1,7 @@
 # ADVERSARIAL AUDIO SYNTHESIS
 
 ## 0 ABSTRACT
-**link : **https://arxiv.org/abs/1802.04208  
+**link :** https://arxiv.org/abs/1802.04208  
 Demo.ipynbはColabratry上で動かすことをオススメします。  
 この研究は、GANを用いて人が認識しやすい音声を生成することを目的としたものです。  
 現状、ほとんどのGANは画像の生成で用いられていましたが、音声の生成では用いられていませんでした。  
